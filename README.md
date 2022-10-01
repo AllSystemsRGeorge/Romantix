@@ -28,7 +28,7 @@ Diana Portillo <br>
 https://github.com/dianaportillo
 <br><br>
 George Durando <br>
-https://github.com/andwilson36
+https://github.com/AllSystemsRGeorge
 <br><br>
 Leo Ho <br>
 https://github.com/leono3
