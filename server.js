@@ -1,4 +1,4 @@
-require('dotenv').config();
+// require('dotenv').config();
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
@@ -11,27 +11,28 @@ const app = express();
 const server = new ApolloServer({
     typeDefs,
     resolvers,
-    // context: authMiddleware
 });
 
-server.applyMiddleware({ app });
-
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use('/images', express.static(path.join(__dirname, '../client/images')));
+// app.use('/images', express.static(path.join(__dirname, '../client/images')));
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/build')));
-};
+// if (process.env.NODE_ENV === 'production') {
+//     app.use(express.static(path.join(__dirname, '../client/build')));
+// };
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../client/build/index.html'));
+// });
 
-db.once('open', () => {
+db.once('open', async () => {
+    await server.start();
+    server.applyMiddleware({app});
+
+
     app.listen(PORT, () => {
         console.log(`API server running on port ${PORT}!`);
-        console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+        // console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
     });
 });
