@@ -56,5 +56,8 @@ const userSchema = new Schema({
 //   return await bcrypt.compare(password, this.password);
 // };
 
+/*const User = model('User', userSchema);
+
+module.exports = User;*/
 
 module.exports = model('User', userSchema);
