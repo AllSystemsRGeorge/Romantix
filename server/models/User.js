@@ -42,7 +42,7 @@ const userSchema = new Schema({
   ],
 });
 
-//comentar de nuevo 
+
 
  userSchema.pre('save', async function (next) {
    if (this.isNew || this.isModified('password')) {
@@ -61,4 +61,4 @@ const User = model('User', userSchema);
 
 module.exports = User;
 
-//module.exports = model('User', userSchema); //descomentar de nuevo
+//module.exports = model('User', userSchema); 
