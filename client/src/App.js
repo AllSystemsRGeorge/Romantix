@@ -4,6 +4,8 @@ import './App.css';
 import Row from './Row'
 import requests from './request';
 import Banner from './Banner';
+import './utils/auth';
+
 
 
 function App() {
