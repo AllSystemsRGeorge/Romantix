@@ -40,7 +40,7 @@ import Auth from '../utils/auth';
     };
 
     return (
-        <div className="form-container">
+        0<div className="form-container">
             <form className="form" onSubmit={handleFormSubmit}>
                 <h3>Sign Up</h3>
                 <div className="form-inputs">
