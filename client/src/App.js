@@ -11,12 +11,13 @@ import './utils/auth';
 function App() {
   return (
     //container with all the movies urls to display in the main page.
+    // fetch the API request from request.js
     <div className="App">
-      {/**nav */}
-    
+
     <Banner />
       
-      <Row title="netflix originals" 
+      <Row 
+      title="netflix originals" 
       fetchUrl={requests.fetchNetflixOriginals}
       isLargeRow//is true by default.
       />
@@ -25,7 +26,7 @@ function App() {
       <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
       <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
       <Row title="RomanceMovies" fetchUrl={requests.fetchRomanceMovies} />
-      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} /> 
      
     </div>
   );
