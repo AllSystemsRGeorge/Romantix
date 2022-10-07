@@ -9,13 +9,16 @@ function App() {
   return (
     <div className="App">
       <h1>Front-end Movies</h1>
-      <Row netflix originals fetchUrl={requests.fetchNetflixOriginals} />
-      <Row TopRated fetchUrl={requests.fetchTopRated} />
-      <Row ActionMovies fetchUrl={requests.fetchTopRated} />
-      <Row ComedyMovies fetchUrl={requests.ComedyMovies} />
-      <Row HorrorMovies fetchUrl={requests.HorrorMovies} />
-      <Row RomanceMovies fetchUrl={requests.RomanceMovies} />
-      <Row Documantaries fetchUrl={requests.Documantaries} />
+      <Row title="netflix originals" 
+      fetchUrl={requests.fetchNetflixOriginals}
+      isLargeRow//is true by default.
+      />
+      <Row tittle="Top Rated" fetchUrl={requests.fetchTopRated} />
+      <Row title="Action Movies" fetchUrl={requests.fetchTopRated} />
+      <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
+      <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
+      <Row title="RomanceMovies" fetchUrl={requests.fetchRomanceMovies} />
+      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
      
     </div>
   );

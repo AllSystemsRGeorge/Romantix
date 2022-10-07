@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  /*note: change the app font here, in case we want to*/
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
