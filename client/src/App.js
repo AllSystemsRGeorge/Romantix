@@ -3,12 +3,17 @@ import React from 'react';
 import './App.css';
 import Row from './Row'
 import requests from './request';
+import Banner from './Banner';
 
 
 function App() {
   return (
+    //container with all the movies urls to display in the main page.
     <div className="App">
-      <h1>Front-end Movies</h1>
+      {/**nav */}
+    
+    <Banner />
+      
       <Row title="netflix originals" 
       fetchUrl={requests.fetchNetflixOriginals}
       isLargeRow//is true by default.
