@@ -2,9 +2,9 @@
 import React from 'react';
 import './App.css';
 import Row from './Row'
-import request from './request'
 import requests from './request';
 import './utils/auth';
+
 
 function App() {
   return (
