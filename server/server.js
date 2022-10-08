@@ -1,4 +1,5 @@
 //require('dotenv').config();
+const mongoose = require('mongoose');
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
@@ -16,11 +17,19 @@ const server = new ApolloServer({
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
- //app.use('/images', express.static(path.join(__dirname, '../client/images')));
+ app.use('/images', express.static(path.join(__dirname, '../client/images')));
 
-// if (process.env.NODE_ENV === 'production') {
-//     app.use(express.static(path.join(__dirname, '../client/build')));
-// };
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../client/build')));
+};
+
+mongoose.connect('mongodb+srv://dianap:Babyzola23@cluster0.9ctxf.mongodb.net/Romantix?retryWrites=true&w=majority')
+.then(() => {
+    console.log('Success')
+})
+.catch(err => console.log(err));
+
+
 
  app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
