@@ -23,12 +23,6 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));
 };
 
-mongoose.connect('mongodb+srv://dianap:Babyzola23@cluster0.9ctxf.mongodb.net/Romantix?retryWrites=true&w=majority')
-.then(() => {
-    console.log('Success')
-})
-.catch(err => console.log(err));
-
 
 
  app.get('*', (req, res) => {
